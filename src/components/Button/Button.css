@@ -1,0 +1,6 @@
+.global-button {
+    padding: 6px;
+    min-width: 200px;
+    cursor: pointer;
+    border-radius: 5px;
+}

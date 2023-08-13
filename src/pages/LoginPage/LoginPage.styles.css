@@ -1,0 +1,47 @@
+.error-message {
+    color: #f11;
+}
+
+.textbox {
+    min-width: 300px;
+    border: none;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.login-background {
+    background-image: url("../../resources/job_search_portals.png");
+    height: 100%;
+}
+
+.login-container {
+    width: max-content;
+    background-color: #8fcdde;
+    padding: 32px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    padding-top: 1px;
+    gap: 8px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.forgot-password-button {
+    border: none;
+    color: blue;
+    text-decoration: underline;
+    text-align: end;
+    background-color: transparent;
+}
+
+.usertype-selector {
+    display: flex;
+}
+
