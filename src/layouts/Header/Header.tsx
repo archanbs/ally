@@ -15,7 +15,7 @@ const Header = () => {
           <h1 className="logo text-[24px] text-themeBlue">Freelance</h1>
         </div>
 
-        <div className="menu flex gap-8 align-middle">
+        <ul className="menu flex gap-8 align-middle">
           <li className="menuList text-[#6f6f6f] hover:text-themeBlue self-center">
             <Link to="/">Jobs</Link>
           </li>
@@ -37,7 +37,7 @@ const Header = () => {
               <BsFillPersonFill />
             </li>
           )}
-        </div>
+        </ul>
       </div>
       {isProfilePopUpShown && (
         <div className="absolute top-[56px] right-[32px] border border-gray-400 bg-white w-36">
@@ -48,7 +48,7 @@ const Header = () => {
               setProfilePopUpShown(!isProfilePopUpShown);
             }}
           >
-            <Link to="/profile">Profile</Link>
+            <Link to="/create-profile">Profile</Link>
           </div>
           <div
             className="text-center cursor-pointer p-2"

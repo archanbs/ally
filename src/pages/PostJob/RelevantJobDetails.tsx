@@ -3,7 +3,7 @@ import { ChoiceGroup } from "../../components";
 
 import { ExperienceLevel, JobType, getPostJobStore } from "./@data/store";
 import { setDuration, setExperienceLevel, setJobType, setLocation, setMaxPrice, setMinPrice } from "./@data/mutatorActions";
-import { TextField } from "../../components/TextField";
+import { TextField } from "../../components/TextField/TextField";
 import React from "react";
 
 export const RelevantJobDetails = observer(() => {

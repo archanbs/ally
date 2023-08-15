@@ -1,5 +1,5 @@
 import React from "react";
-import { SectionHeading } from "../../components/SectionHeading";
+import { SectionHeading } from "../../components/SectionHeading/SectionHeading";
 import { observer } from "mobx-react";
 import { JobTitleDescription } from "./JobTitleDescription";
 import { Skills } from "./Skills";
@@ -10,7 +10,7 @@ enum Section {
   title,
   skills,
   relevantDetails,
-  contactInfo
+  contactInfo,
 }
 
 export const PostJob = observer(() => {

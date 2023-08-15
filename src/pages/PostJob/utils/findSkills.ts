@@ -14,6 +14,6 @@ export function findSkills(searchVal: string) {
       break;
     }
   }
-  console.log(filteredSkills);
+  // console.log(filteredSkills);
   return filteredSkills;
 }

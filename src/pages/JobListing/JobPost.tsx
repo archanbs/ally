@@ -10,7 +10,7 @@ export const JobPost = ({ job }: IJobPostProps) => {
     const array = [];
     array.push(job.type === 2 ? "Hourly" : "Fixed");
     array.push(job.tierText);
-    array.push(job.createdOn?.toString());
+    array.push(job.createdOn?.toString().split("T")[0]);
 
     return array.join(" | ");
   };

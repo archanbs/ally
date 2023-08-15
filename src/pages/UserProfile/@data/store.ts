@@ -11,12 +11,22 @@ export interface UserContactInfo {
   mobileNumber?: string; // todo: separate out the extension and mobile number
 }
 
+export interface GitHubRepo {
+  html_url: string;
+  name: string;
+  language: string;
+  watchers_count: number;
+  visibility: string;
+}
+
 export interface IUserProfileState {
   title: string;
   description: string;
   hourlyRate: Number;
   experienceLevel: ExperienceLevel;
   skills: string[];
+  githubProfile: string;
+  ghRepos: GitHubRepo[];
   services?: string[];
   contactInfo?: UserContactInfo;
 }
@@ -27,5 +37,7 @@ export const getUserProfileStore = createStore<IUserProfileState>("UserProfileSt
   hourlyRate: 5,
   experienceLevel: ExperienceLevel.Beginner,
   skills: [],
+  githubProfile: "",
+  ghRepos: [],
   contactInfo: {},
 });

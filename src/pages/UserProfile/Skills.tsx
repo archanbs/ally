@@ -22,7 +22,6 @@ export const Skills = observer(() => {
   return (
     <>
       <label className="font-semibold">Enter your skills and show what you would offer</label>
-
       <div className="w-[100%] px-2 mt-4 border border-gray-400 rounded-2xl flex justify-center items-center gap-1">
         <BsSearch className="icon" />
         <input
@@ -68,7 +67,7 @@ export const Skills = observer(() => {
       <div className="m-4 z-0">
         <CustomList
           label={"Your skills: "}
-          getItems={() => selectedSkills}
+          items={selectedSkills}
           onItemClicked={(skillName, index) => removeSkill(skillName)}
           showClearAll={selectedSkills.length > 0}
           onClearAllClicked={clearAllSkills}

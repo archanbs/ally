@@ -18,6 +18,7 @@ export const TitleAndBio = observer(() => {
         required
         onChange={setTitle}
         description="Enter title related to your professional services"
+        width={500}
       />
 
       <TextArea

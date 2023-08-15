@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Section heading is rendered correctly 1`] = `
+<div
+  className="py-4 border-b border-r border-gray-300"
+  onClick={[Function]}
+>
+  heading
+</div>
+`;
+
+exports[`Section heading is rendered correctly with selected 1`] = `
+<div
+  className="py-4 border-b border-r border-gray-300"
+  onClick={[Function]}
+  style={
+    Object {
+      "borderRight": "none",
+    }
+  }
+>
+  heading
+</div>
+`;

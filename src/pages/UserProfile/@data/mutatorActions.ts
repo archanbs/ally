@@ -21,6 +21,10 @@ export const setHourlyRate = mutatorAction("setHourlyRate", (hourlyRate: Number)
   getUserProfileStore().hourlyRate = hourlyRate;
 });
 
+export const setGitHubProfile = mutatorAction("setGitHubProfile", (msg: string) => {
+  getUserProfileStore().githubProfile = msg;
+});
+
 export const addSkill = mutatorAction("addSkill", (skill: string) => {
   const { skills } = getUserProfileStore();
 

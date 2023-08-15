@@ -1,6 +1,6 @@
 import { observer } from "mobx-react";
 import * as React from "react";
-import { SectionHeading } from "../../components/SectionHeading";
+import { SectionHeading } from "../../components/SectionHeading/SectionHeading";
 import { Skills } from "./Skills";
 import { TitleAndBio } from "./TitleAndBio";
 import { ContactInfoAndSubmit } from "./ContactInfoAndSubmit";
@@ -39,12 +39,12 @@ export const UserProfile = observer(() => {
           />
         </div>
 
-        <div className="pl-10 pt-10">
+        <form className="pl-10 pt-10">
           {section === Section.title && <TitleAndBio />}
           {section === Section.skills && <Skills />}
           {section === Section.experience && <GitHubProfile />}
           {section === Section.contactInfo && <ContactInfoAndSubmit />}
-        </div>
+        </form>
       </div>
     </div>
   );

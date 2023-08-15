@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckBox snapshot test 1`] = `
+<div>
+  <label
+    className="font-semibold my-2"
+  >
+    Choice group
+  </label>
+  <br />
+  <div>
+    <input
+      checked={true}
+      id="1"
+      name="Choice-group"
+      onChange={[Function]}
+      type="radio"
+      value="Choice 1"
+    />
+    <label
+      className="m-2"
+      htmlFor="1"
+    >
+      Choice 1
+    </label>
+    <br />
+  </div>
+  <br />
+</div>
+`;

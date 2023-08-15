@@ -1,21 +1,66 @@
 import React from "react";
-import { TextField } from "../../components";
+import { Button, TextField } from "../../components";
+import { fetchGitHubRepos } from "./@data/fetchGitHubRepos";
+import { GitHubRepo, getUserProfileStore } from "./@data/store";
+import { setGitHubProfile } from "./@data/mutatorActions";
+import { observer } from "mobx-react";
+import { AiOutlineEye } from "react-icons/ai";
 
-export const GitHubProfile = () => {
+export const GitHubProfile = observer(() => {
+  const [profile, setProfile] = React.useState("");
+  const { ghRepos } = getUserProfileStore();
+
   return (
     <div>
       {/* <label className="font-semibold">Enter your GitHub profile</label> */}
-      <TextField
-        value=""
-        placeholder="https://github.com/archanbs"
-        label={"GitHub profile"}
-        id={"github-profile"}
-        onChange={(val) => {
-          if (val.indexOf("github.com") !== -1) {
-            const parts = val.split("/");
-          }
-        }}
-      />
+      <div className="flex">
+        <TextField
+          value={profile}
+          placeholder="https://github.com/archanbs"
+          label={"GitHub profile"}
+          id={"github-profile"}
+          onChange={(val) => {
+            setProfile(val);
+            setGitHubProfile(val);
+          }}
+          width={400}
+        />
+        <Button
+          className="text-[white] bg-themeBlue p-[2px] rounded-md hover:bg-[#1560bd] text-[12px] h-10 self-center"
+          text={"Fetch github repositories"}
+          onClick={() => {
+            if (profile.indexOf("github.com") !== -1) {
+              const parts = profile.split("github.com/");
+              const githubUserName = parts[1];
+              fetchGitHubRepos(githubUserName);
+            }
+          }}
+        />
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {ghRepos.map((repo) => (
+          <GitHubRepoInfo key={repo.name} {...repo} />
+        ))}
+      </div>
+    </div>
+  );
+});
+
+export const GitHubRepoInfo = ({ name, html_url, watchers_count, language, visibility }: GitHubRepo) => {
+  console.log(html_url);
+  return (
+    <div className="m-4 p-4 rounded border border-gray-400">
+      <a className="text-themeBlue font-semibold underline" href={html_url}>
+        {name}
+      </a>
+      <div className="flex gap-4 text-[12px] mt-2 justify-between">
+        <span>{language}</span>
+        <span className="flex gap-1 px-2">
+          <AiOutlineEye className="self-center" />
+          {watchers_count}
+        </span>
+        <span>{visibility}</span>
+      </div>
     </div>
   );
 };

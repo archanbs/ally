@@ -1,6 +1,6 @@
 import React from "react";
-import Filters from "../../layouts/Filters/Filters";
-import JobList from "../../layouts/JobList/JobList";
+import Filters from "./Filters";
+import JobList from "./JobList";
 
 export const JobListing = () => {
   return (

@@ -5,7 +5,7 @@ import { BsSearch } from "react-icons/bs";
 import { findSkills } from "./utils/findSkills";
 import { addSkill, clearAllSkills, removeSkill } from "./@data/mutatorActions";
 import { getPostJobStore } from "./@data/store";
-import { CustomList } from "../../components/CustomList";
+import { CustomList } from "../../components/CustomList/CustomList";
 
 export const Skills = observer(() => {
   const [skills, setSkills] = React.useState([]);
@@ -16,7 +16,6 @@ export const Skills = observer(() => {
     setVal("");
     setSkills([]);
   };
-  // console.log(getPostJobStore().skills);
   React.useEffect(() => {
     console.log("Skills updated");
   }, [selectedSkills]);
@@ -70,7 +69,7 @@ export const Skills = observer(() => {
       <div className="m-4 z-0">
         <CustomList
           label={"Selected skills: "}
-          getItems={() => selectedSkills}
+          items={selectedSkills}
           onItemClicked={(skillName, index) => removeSkill(skillName)}
           onClearAllClicked={clearAllSkills}
         />

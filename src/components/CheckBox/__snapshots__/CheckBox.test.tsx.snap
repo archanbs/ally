@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckBox snapshot test 1`] = `
+<div
+  className="cursor-pointer"
+  onClick={[Function]}
+>
+  <input
+    className="mr-2 cursor-pointer"
+    id="check-box"
+    type="checkbox"
+    value="Check box"
+  />
+  <label
+    className="cursor-pointer"
+    htmlFor="check-box"
+  >
+    Check box
+  </label>
+</div>
+`;
+
+exports[`CheckBox snapshot test with not checked 1`] = `
+<div
+  className="cursor-pointer"
+  onClick={[Function]}
+>
+  <input
+    className="mr-2 cursor-pointer"
+    id="check-box"
+    type="checkbox"
+    value="Check box"
+  />
+  <label
+    className="cursor-pointer"
+    htmlFor="check-box"
+  >
+    Check box
+  </label>
+</div>
+`;

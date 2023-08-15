@@ -20,12 +20,12 @@ export const LoginPage = function () {
       <>
         <div className="usertype-selector">
           <Button
-            className="bg-[lightblue] border-b-[lightblue] border-2 border-[#fff]"
+            className="bg-[lightblue] border-b-[lightblue] border-2 border-[#fff] min-[200px]"
             onClick={() => setUserType(UserType.Freelancer)}
             text={"Freelancer"}
           />
           <Button
-            className="bg-[#e8b5d0] border-b-[#e8b5d0] border-2 border-[#fff]"
+            className="bg-[#e8b5d0] border-b-[#e8b5d0] border-2 border-[#fff] min-[200px]"
             onClick={() => setUserType(UserType.Employer)}
             text={"Employer"}
           />
