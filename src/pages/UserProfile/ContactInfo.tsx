@@ -1,11 +1,10 @@
 import React from "react";
 import { TextField } from "../../components";
 import { observer } from "mobx-react";
-import { Button } from "../../components/Button/Button";
 import { getUserProfileStore } from "./@data/store";
 import { setAddressLine1, setAddressLine2, setCity, setCountry, setMobileNumber, setStateOrProvince, setZipCode } from "./@data/mutatorActions";
 
-export const ContactInfoAndSubmit = observer(() => {
+export const ContactInfo = observer(() => {
   const { addressline1, addressline2, city, stateOrProvince, country, zipCode, mobileNumber } = getUserProfileStore().contactInfo;
   return (
     <>
@@ -28,16 +27,6 @@ export const ContactInfoAndSubmit = observer(() => {
         placeholder="Enter mobile no. with country code"
         value={mobileNumber}
         onChange={setMobileNumber}
-      />
-
-      <Button
-        className="bg-lightBlue border border-themeBlue mb-2"
-        id="saveProfile"
-        type="submit"
-        onClick={() => {
-          alert("Profile saved successfully!");
-        }}
-        text="Save profile"
       />
     </>
   );

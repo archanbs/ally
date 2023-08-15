@@ -10,17 +10,19 @@ export type IChoiceGroupProps = {
 export type IChoiceOption = {
   key: string;
   value: string;
+  checked?: boolean;
 };
 
 export const ChoiceGroup = ({ label, options, selectedKey, onChange }: IChoiceGroupProps) => {
   const name = label.split(" ").join("-");
+
   return (
     <div>
       <label className="font-semibold my-2">{label}</label>
       <br />
-      {options.map(({ key, value }, index) => {
+      {options.map(({ key, value }) => {
         return (
-          <div key={key + index}>
+          <div key={key}>
             <input
               type="radio"
               id={key}
@@ -28,7 +30,7 @@ export const ChoiceGroup = ({ label, options, selectedKey, onChange }: IChoiceGr
               value={value}
               onChange={(ev) => {
                 ev.preventDefault();
-                console.log("onChange triggered");
+                console.log("onChange triggered", key, selectedKey);
                 onChange({ key: key, value: value });
               }}
               checked={key === selectedKey}
@@ -36,7 +38,6 @@ export const ChoiceGroup = ({ label, options, selectedKey, onChange }: IChoiceGr
             <label className="m-2" htmlFor={key}>
               {value}
             </label>
-            <br />
           </div>
         );
       })}

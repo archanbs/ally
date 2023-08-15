@@ -1,22 +1,20 @@
 import React, { useState } from "react";
 import { Button } from "../../components/Button/Button";
 import "./LoginPage.styles.css";
+import { updatePassword } from "./@data/services/loginServices";
 
 export const ForgotPassword = function ({ email }) {
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [userEmail, setEmail] = useState(email);
 
-  function updatePassword(userEmail: any, newPassword: string): void {
-    throw new Error("Function not implemented.");
-  }
-
   return (
     <>
-      <div style={{ width: "32px" }} />
-      <input id="email" type="email" value={userEmail} onChange={(ev) => setEmail(ev.target.value)} placeholder="Enter email" />
+      <div className="w-[100%] text-center my-2 text-[20px]">Update password</div>
+      <input className="rounded" id="email" type="email" value={userEmail} onChange={(ev) => setEmail(ev.target.value)} placeholder="Enter email" />
 
       <input
+        className="rounded"
         id="newPassword"
         type="password"
         value={newPassword}
@@ -24,6 +22,7 @@ export const ForgotPassword = function ({ email }) {
         placeholder="Enter new password"
       />
       <input
+        className="rounded"
         id="confirmPassword"
         type="password"
         value={confirmPassword}
@@ -37,7 +36,7 @@ export const ForgotPassword = function ({ email }) {
         </span>
       ) : null}
 
-      <Button onClick={() => updatePassword(userEmail, newPassword)} text={"Update password"} />
+      <Button className="border border-themeBlue rounded-xl my-2" onClick={() => updatePassword(userEmail, newPassword)} text={"Update"} />
     </>
   );
 };

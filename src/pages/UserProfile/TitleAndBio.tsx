@@ -1,15 +1,17 @@
 import React from "react";
 import { ChoiceGroup, TextArea, TextField } from "../../components";
-import { setDescription, setExperienceLevel, setHourlyRate, setTitle } from "./@data/mutatorActions";
+import { setDescription, setExperienceLevel, setHourlyRate, setName, setTitle } from "./@data/mutatorActions";
 import { observer } from "mobx-react";
 import { getUserProfileStore } from "./@data/store";
 import { ExperienceLevel } from "../PostJob/@data/store";
 
 export const TitleAndBio = observer(() => {
-  const { title, description, experienceLevel, hourlyRate } = getUserProfileStore();
+  const { name, title, description, experienceLevel, hourlyRate } = getUserProfileStore();
 
   return (
-    <div>
+    <>
+      <TextField label={"Name"} id="name" placeholder={""} value={name} required onChange={setName} width={300} />
+
       <TextField
         label={"Title"}
         id="title"
@@ -40,7 +42,6 @@ export const TitleAndBio = observer(() => {
         ]}
         selectedKey={ExperienceLevel[experienceLevel]?.toLowerCase()}
         onChange={setExperienceLevel}
-        // required
       />
 
       <TextField
@@ -55,6 +56,6 @@ export const TitleAndBio = observer(() => {
         min={5}
         required
       />
-    </div>
+    </>
   );
 });

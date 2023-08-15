@@ -7,12 +7,11 @@ import { observer } from "mobx-react";
 import { AiOutlineEye } from "react-icons/ai";
 
 export const GitHubProfile = observer(() => {
-  const [profile, setProfile] = React.useState("");
-  const { ghRepos } = getUserProfileStore();
+  const { ghRepos, githubProfile } = getUserProfileStore();
+  const [profile, setProfile] = React.useState(githubProfile || "");
 
   return (
     <div>
-      {/* <label className="font-semibold">Enter your GitHub profile</label> */}
       <div className="flex">
         <TextField
           value={profile}
@@ -37,7 +36,7 @@ export const GitHubProfile = observer(() => {
           }}
         />
       </div>
-      <div className="flex flex-wrap gap-2">
+      <div className="my-4 flex flex-wrap gap-2">
         {ghRepos.map((repo) => (
           <GitHubRepoInfo key={repo.name} {...repo} />
         ))}
@@ -47,9 +46,8 @@ export const GitHubProfile = observer(() => {
 });
 
 export const GitHubRepoInfo = ({ name, html_url, watchers_count, language, visibility }: GitHubRepo) => {
-  console.log(html_url);
   return (
-    <div className="m-4 p-4 rounded border border-gray-400">
+    <div className="m-1 p-4 rounded border border-gray-400">
       <a className="text-themeBlue font-semibold underline" href={html_url}>
         {name}
       </a>

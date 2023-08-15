@@ -6,8 +6,17 @@ import UserProfile from "./pages/UserProfile/UserProfile";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { JobListing } from "./pages/JobListing/JobListing";
 import { PostJob } from "./pages/PostJob/PostJob";
+import { ViewMyJobs } from "./pages/JobListing/ViewMyJobs";
+import { generateJobToApplicantsMapping } from "./@data/Jobs/jobsProcessing";
+import { ViewApplicants } from "./pages/ViewApplicants/ViewApplicants";
+// import { setupEmployerData } from "./@data/Employers/Employer";
 
 function App() {
+  React.useEffect(() => {
+    // setupEmployerData();
+    generateJobToApplicantsMapping();
+  }, []);
+
   return (
     <BrowserRouter>
       <div className=" h-screen flex flex-col bg-white m-auto">
@@ -19,6 +28,8 @@ function App() {
             <Route path="/create-profile" element={<UserProfile />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/postJob" element={<PostJob />} />
+            <Route path="/viewMyJobs" element={<ViewMyJobs />} />
+            <Route path="/viewApplicants" element={<ViewApplicants />} />
           </Routes>
         </div>
         <Footer />

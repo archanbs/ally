@@ -73,3 +73,15 @@ export const setZipCode = mutatorAction("setZipCode", (msg: string) => {
 export const setMobileNumber = mutatorAction("setMobileNumber", (mobileNumber: string) => {
   getUserProfileStore().contactInfo.mobileNumber = mobileNumber;
 });
+
+export const setEmail = mutatorAction("setEmail", (email: string) => {
+  getUserProfileStore().email = email;
+});
+
+export const setPassword = mutatorAction("setPassword", (password: string) => {
+  getUserProfileStore().password = password;
+});
+
+export const setName = mutatorAction("setName", (name: string) => {
+  getUserProfileStore().name = name;
+});

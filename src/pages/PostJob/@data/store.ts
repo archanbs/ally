@@ -9,8 +9,8 @@ export interface ICompanyInfo {
 }
 
 export enum JobType {
-  Fixed,
-  Hourly,
+  Fixed = 1,
+  Hourly = 2,
 }
 
 export enum ExperienceLevel {

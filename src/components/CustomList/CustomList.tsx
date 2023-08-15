@@ -10,8 +10,6 @@ export type CustomListProps = {
 };
 
 export const CustomList = ({ label, items, onItemClicked, onClearAllClicked, showClearAll }: CustomListProps) => {
-  console.log(items);
-
   return (
     <div className="flex gap-2 items-center">
       <div>{label}</div>
@@ -19,12 +17,13 @@ export const CustomList = ({ label, items, onItemClicked, onClearAllClicked, sho
         {items.map((itemName, index) => {
           return (
             <li
-              className="p-1 px-2 text-[12px] my-4 rounded-2xl bg-themeBlue text-center text-white flex"
+              className="p-1 px-2 text-[12px] my-2 rounded-2xl bg-themeBlue text-center text-white flex"
+              style={{ cursor: onItemClicked ? "pointer" : "auto" }}
               key={`filter-${index}`}
               onClick={(ev) => {
                 console.log("remove item", itemName);
                 ev.preventDefault();
-                onItemClicked(itemName, index);
+                onItemClicked?.(itemName, index);
               }}
               tabIndex={1}
             >

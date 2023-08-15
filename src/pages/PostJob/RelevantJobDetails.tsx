@@ -62,11 +62,13 @@ export const RelevantJobDetails = observer(() => {
       <ChoiceGroup
         label="Experience level"
         options={[
-          { key: "beginner", value: "Beginner" },
-          { key: "intermediate", value: "Intermediate" },
-          { key: "expert", value: "Expert" },
+          { key: "beginner", value: "Beginner", checked: experienceLevel === ExperienceLevel.Beginner },
+          { key: "intermediate", value: "Intermediate", checked: experienceLevel === ExperienceLevel.Intermediate },
+          { key: "expert", value: "Expert", checked: experienceLevel === ExperienceLevel.Expert },
         ]}
-        selectedKey={ExperienceLevel[experienceLevel]?.toLowerCase()}
+        selectedKey={
+          experienceLevel === ExperienceLevel.Beginner ? "beginner" : experienceLevel === ExperienceLevel.Intermediate ? "intermediate" : "expert"
+        }
         onChange={setExperienceLevel}
       />
 
