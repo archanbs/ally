@@ -16,7 +16,7 @@ function App() {
         <div role="main" className="w-11/12 flex-1 flex m-auto">
           <Routes>
             <Route path="/" element={<JobListing />} />
-            <Route path="/profile" element={<UserProfile />} />
+            <Route path="/create-profile" element={<UserProfile />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/postJob" element={<PostJob />} />
           </Routes>
