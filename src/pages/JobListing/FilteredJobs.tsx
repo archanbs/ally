@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { IJobDetails, getFilteredJobData, getJobsDataPaginated } from "../../@data/Jobs/JobDetails";
-import { Pagination } from "../../layouts/Pagination/Pagination";
+import { Pagination } from "../../components/Pagination/Pagination";
 import { CustomList } from "../../components/CustomList/CustomList";
 import { getFiltersStore } from "./@data/store";
 import { clearAllFilters } from "./@data/mutatorActions";

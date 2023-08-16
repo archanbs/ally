@@ -4,3 +4,4 @@ export * from "./ChoiceGroup/ChoiceGroup";
 export * from "./CheckBox/CheckBox";
 export * from "./CustomList/CustomList";
 export * from "./Button/Button";
+export * from "./Pagination/Pagination";

@@ -10,10 +10,10 @@
     border-radius: 5px;
 }
 
-.login-background {
+/* .login-background {
     background-image: url("../../resources/job_search_portals.png");
     height: 100%;
-}
+} */
 
 .login-container {
     width: max-content;

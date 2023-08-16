@@ -34,7 +34,6 @@ export const Skills = observer(() => {
             ev.preventDefault();
             const searchVal = ev.target.value;
             setVal(searchVal);
-            // debounce(search(searchVal));
             if (searchVal.length >= 3) {
               setSkills(findSkills(searchVal));
             }
